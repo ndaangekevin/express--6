@@ -1,5 +1,5 @@
 'use strict';
-
+console.log("crap");
 const express = require('express');
 
 // Constants
@@ -9,8 +9,9 @@ const HOST = '0.0.0.0';
 // App
 const app = express();
 app.get('/', (req, res) => {
-  res.send('Hello world changed by nodemon\n');
-});
+  res.send('Hello World!')
+})
 
-app.listen(PORT, HOST);
+app.listen(PORT);
 console.log(`Running on http://${HOST}:${PORT}`);
+console.log("crap");
