@@ -154,22 +154,23 @@ bookInstanceCreate(
   "Available"
 );
 bookInstanceCreate(
-  books[4],
-  "New York, NY Tom Doherty Associates, LLC, 2015.",
-  false,
-  "Available"
-);
-bookInstanceCreate(
-  books[4],
-  "New York, NY Tom Doherty Associates, LLC, 2015.",
-  false,
-  "Maintenance"
-);
-  books[4],
-  "New York, NY Tom Doherty Associates, LLC, 2015.",
-  false,
-  "Loaned"
-);
+    books[4],
+    "New York, NY Tom Doherty Associates, LLC, 2015.",
+    false,
+    "Available"
+  );
+  bookInstanceCreate(
+    books[4],
+    "New York, NY Tom Doherty Associates, LLC, 2015.",
+    false,
+    "Maintenance"
+  );
+  bookInstanceCreate(
+    books[4],
+    "New York, NY Tom Doherty Associates, LLC, 2015.",
+    false,
+    "Loaned"
+  );
 bookInstanceCreate(books[0], "Imprint XXX2", false, false);
 bookInstanceCreate(books[1], "Imprint XXX3", false, false);
 
