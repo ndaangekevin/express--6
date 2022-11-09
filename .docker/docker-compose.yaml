@@ -47,7 +47,8 @@ services:
     - 3000:3000
     environment:
       MONGODB_CONNSTRING: mongodb://root:example@mongodb:27017
-
+    depends_on:
+      - mongodb
     networks: 
       - mongo1_network 
 
