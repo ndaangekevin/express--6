@@ -37,9 +37,6 @@ services:
       ME_CONFIG_BASICAUTH_PASSWORD: example
     networks: 
       - mongo1_network 
-  
-    depends_on:
-      - mongo
       
   server:
     image: node
