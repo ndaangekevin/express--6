@@ -40,7 +40,7 @@ services:
       
   server:
     image: node
-    restart: always
+    
     
     container_name: server4
     ports:
