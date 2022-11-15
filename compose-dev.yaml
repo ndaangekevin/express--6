@@ -44,7 +44,7 @@ services:
     entrypoint:
     - sleep
     - infinity
-    image: node:19
+    image: node:latest
     init: true
     volumes:
     - type: bind
