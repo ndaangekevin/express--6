@@ -40,11 +40,9 @@ services:
     networks: 
       - mongo1_network 
       
-  myapp:
-    #image: node
+  server:
     build:
       context: myapp
-      target: development
     restart: always
     
     container_name: server4
