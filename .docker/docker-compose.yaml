@@ -48,7 +48,7 @@ services:
     environment:
       MONGODB_CONNSTRING: mongodb://root:example@mongodb:27017
     depends_on:
-      - mongo
+      - mongodb
     networks: 
       - mongo1_network
 
