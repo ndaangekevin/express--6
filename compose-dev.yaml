@@ -2,6 +2,31 @@
 version: "3.8"
 
 services:
+  server:
+    entrypoint:
+    - sleep
+    - infinity
+    image: node:latest
+    init: true
+    volumes:
+    - type: bind
+      source: /var/run/docker.sock
+      target: /var/run/docker.sock
+    # build:
+    #  context: myapp
+    restart: always
+    
+    container_name: server4
+    ports:
+    - 3000:3000
+    environment:
+      MONGODB_CONNSTRING: mongodb://root:example@mongodb:27017
+    depends_on:
+      - mongodb
+    networks: 
+      - mongo1_network
+    # command: ["npm", "run", "start"]  
+
   mongodb:
     image: mongo:5.0
     restart: always
@@ -40,30 +65,7 @@ services:
     networks: 
       - mongo1_network 
       
-  server:
-    entrypoint:
-    - sleep
-    - infinity
-    image: node:latest
-    init: true
-    volumes:
-    - type: bind
-      source: /var/run/docker.sock
-      target: /var/run/docker.sock
-    # build:
-    #  context: myapp
-    restart: always
-    
-    container_name: server4
-    ports:
-    - 3000:3000
-    environment:
-      MONGODB_CONNSTRING: mongodb://root:example@mongodb:27017
-    depends_on:
-      - mongodb
-    networks: 
-      - mongo1_network
-    command: ["npm", "run", "start"]  
+
 
 networks:
   mongo1_network:
