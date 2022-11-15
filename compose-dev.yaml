@@ -41,8 +41,17 @@ services:
       - mongo1_network 
       
   server:
-    build:
-      context: myapp
+    entrypoint:
+    - sleep
+    - infinity
+    image: node
+    init: true
+    volumes:
+    - type: bind
+      source: /var/run/docker.sock
+      target: /var/run/docker.sock
+    # build:
+    #  context: myapp
     restart: always
     
     container_name: server4
