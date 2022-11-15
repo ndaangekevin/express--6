@@ -42,7 +42,9 @@ services:
       
   myapp:
     #image: node
-    build: myapp
+    build:
+      context: myapp
+      target: development
     restart: always
     
     container_name: server4
