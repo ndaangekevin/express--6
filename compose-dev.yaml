@@ -53,6 +53,7 @@ services:
       - mongodb
     networks: 
       - mongo1_network
+    command: ["npm", "run", "start"]  
 
 networks:
   mongo1_network:
