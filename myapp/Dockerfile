@@ -1,3 +1,3 @@
-From node
+FROM node
 WORKDIR /myapp
 CMD ["npm", "run", "start"]
