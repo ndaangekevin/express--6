@@ -44,7 +44,7 @@ services:
     entrypoint:
     - sleep
     - infinity
-    image: node:18-alpine
+    image: node:19
     init: true
     volumes:
     - type: bind
