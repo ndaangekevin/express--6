@@ -40,8 +40,9 @@ services:
     networks: 
       - mongo1_network 
       
-  server:
+  myapp:
     image: node
+    build: myapp
     # restart: always
     
     container_name: server4
