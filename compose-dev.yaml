@@ -16,11 +16,11 @@ services:
     #  context: myapp
     restart: always
     
-    container_name: server5
+    container_name: server6
     ports:
     - 3000:3000
     environment:
-const mongoDB = 'mongodb://mongodb5:27017/local_library';
+const mongoDB = 'mongodb://mongodb6:27017/local_library';
     depends_on:
       - mongodb
     networks: 
@@ -30,7 +30,7 @@ const mongoDB = 'mongodb://mongodb5:27017/local_library';
   mongodb:
     image: mongo:5.0
     restart: always
-    container_name: mongodb5
+    container_name: mongodb6
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: example
