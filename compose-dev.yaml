@@ -20,7 +20,7 @@ services:
     ports:
     - 3000:3000
     environment:
-      MONGODB_CONNSTRING: mongodb://root:example@mongodb:27017
+const mongoDB = 'mongodb://mongodb5:27017/local_library';
     depends_on:
       - mongodb
     networks: 
