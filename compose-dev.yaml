@@ -20,7 +20,7 @@ services:
     ports:
     - 3000:3000
     environment:
-        MONGODB_CONNSTRING: mongodb://root:example@mongodb:27017/local_library'
+        MONGODB_CONNSTRING: mongodb5://root:example@mongodb:27017/local_library'
     depends_on:
       - mongodb
     networks: 
@@ -54,7 +54,7 @@ services:
       ME_CONFIG_MONGODB_AUTH_USERNAME: root
       ME_CONFIG_MONGODB_AUTH_PASSWORD: example
       ME_CONFIG_MONGODB_AUTH_DATABASE: local_library
-      MONGODB_CONNSTRING: mongodb://root:example@mongodb:27017
+      MONGODB_CONNSTRING: mongodb5://root:example@mongodb:27017
       ME_CONFIG_MONGODB_SERVER: mongodb
       ME_CONFIG_MONGODB_PORT: 27017
       # ME_CONFIG_MONGODB_ENABLE_ADMIN: "true"
