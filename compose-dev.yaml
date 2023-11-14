@@ -2,10 +2,35 @@
 version: "3.8"
 
 services:
+  server:
+    entrypoint:
+    - sleep
+    - infinity
+    image: node:latest
+    init: true
+    volumes:
+    - type: bind
+      source: /var/run/docker.sock
+      target: /var/run/docker.sock
+    # build:
+    #  context: myapp
+    restart: always
+    
+    container_name: server5
+    ports:
+    - 3000:3000
+    environment:
+const mongoDB = 'mongodb://mongodb5:27017/local_library';
+    depends_on:
+      - mongodb
+    networks: 
+      - mongo1_network
+    # command: ["npm", "run", "start"]  
+
   mongodb:
     image: mongo:5.0
     restart: always
-    container_name: mongodb
+    container_name: mongodb5
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: example
@@ -20,7 +45,7 @@ services:
   mongo-express:
     image: mongo-express:0.54.0
     restart: always
-    container_name: mongo-express
+    container_name: mongo-express5
     ports:
       - 8081:8081
     environment:
@@ -32,14 +57,15 @@ services:
       MONGODB_CONNSTRING: mongodb://root:example@mongodb:27017
       ME_CONFIG_MONGODB_SERVER: mongodb
       ME_CONFIG_MONGODB_PORT: 27017
-#     ME_CONFIG_MONGODB_ENABLE_ADMIN: "true"
+      # ME_CONFIG_MONGODB_ENABLE_ADMIN: "true"
       ME_CONFIG_BASICAUTH_USERNAME: root
       ME_CONFIG_BASICAUTH_PASSWORD: example
+    depends_on:
+      - mongodb  
     networks: 
       - mongo1_network 
-  
-    depends_on:
-      - mongodb
+      
+
 
 networks:
   mongo1_network:
