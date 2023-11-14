@@ -20,7 +20,7 @@ services:
     ports:
     - 3000:3000
     environment:
-        MONGODB_CONNSTRING: 'mongodb://mongodb5:27017/local_library'
+        MONGODB_CONNSTRING: 'mongodb://mongodb6:27017/local_library'
     depends_on:
       - mongodb
     networks: 
@@ -28,7 +28,7 @@ services:
     # command: ["npm", "run", "start"]  
 
   mongodb:
-    image: mongo:5.0
+    image: mongo:6.0
     restart: always
     container_name: mongodb5
     environment:
@@ -54,7 +54,7 @@ services:
       ME_CONFIG_MONGODB_AUTH_USERNAME: root
       ME_CONFIG_MONGODB_AUTH_PASSWORD: example
       ME_CONFIG_MONGODB_AUTH_DATABASE: local_library
-      MONGODB_CONNSTRING: mongodb5://root:example@mongodb:27017
+      MONGODB_CONNSTRING: mongodb6://root:example@mongodb:27017
       ME_CONFIG_MONGODB_SERVER: mongodb
       ME_CONFIG_MONGODB_PORT: 27017
       # ME_CONFIG_MONGODB_ENABLE_ADMIN: "true"
